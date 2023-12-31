@@ -39,6 +39,9 @@ const zipBase = [
     "Your location is more than a place; it's a part of your journey."
 ];
 
+//Message Splitting Variables
+
+// Age based messages generator
 function ageSec (ageVar) {
     const randMes = Math.floor(Math.random() * ageBase.length);
     const splitMes = ageBase[randMes].split(':');
@@ -53,3 +56,22 @@ function ageSec (ageVar) {
 
     return ageMesOut
 }
+
+//console.log(ageSec(27));
+
+//Gender based messages generator
+function genderSec (genVar) {
+    const randMes = Math.floor(Math.random() * sexBase.length);
+    const splitGen = sexBase[randMes].split(':');
+    let genMesOut = "";
+
+    if (splitGen[0] === genVar) {
+        genMesOut = splitGen[1]
+    } else {
+        genMesOut = "Try again"
+    }
+
+    return genMesOut + ":" + splitGen[0] + "-" + genVar
+}
+
+//console.log(genderSec("M"));

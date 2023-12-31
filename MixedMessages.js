@@ -39,10 +39,17 @@ const zipBase = [
     "Your location is more than a place; it's a part of your journey."
 ];
 
-function ageSec (_age) {
+function ageSec (ageVar) {
     const randMes = Math.floor(Math.random() * ageBase.length);
-    const splitMes = ageBase[radMes].split(':');
+    const splitMes = ageBase[randMes].split(':');
     const ageRange = splitMes[0].split('-');
+    let ageMesOut = "";
 
-    return randMes, splitMes, ageRange
+    if(ageVar >= ageRange[0] && ageVar <= ageRange[1]){
+        ageMesOut = splitMes[1];
+    } else {
+        ageMesOut = "Try Again"
+    };
+
+    return ageMesOut
 }

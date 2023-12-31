@@ -1,6 +1,6 @@
-let age = 0;
-let sex = "";
-let zip = 0;
+let age = 19;
+let sex = "M";
+let zip = 90210;
 
 const ageBase = [
     "10-25:Every year is a new chapter filled with unique stories. Embrace yours.",
@@ -75,3 +75,31 @@ function genderSec (genVar) {
 }
 
 //console.log(genderSec("M"));
+
+//Zip Code Random Message Generator - Does not take input
+function zipSec () {
+    const randMes = Math.floor(Math.random() * zipBase.length);
+    return zipBase[randMes]
+}
+
+//console.log(zipSec())
+
+//Random Message Type Selector
+const randMesType = Math.floor(Math.random() * 3);
+
+const finalMessageOutput = (numVar) => {
+    switch (numVar){
+        case 0:
+            return ageSec(age);
+        break;
+        case 1:
+            return genderSec(sex);
+        break;
+        default:
+            return zipSec();
+    }
+}
+
+const inspoMess = finalMessageOutput(randMesType)
+
+//console.log(inspoMess)
